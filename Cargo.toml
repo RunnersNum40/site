@@ -1,0 +1,28 @@
+[package]
+name = "tedpinkerton-ca"
+version = "0.1.0"
+authors = ["Theodore <p_t@fastmail.net>"]
+edition = "2021"
+
+[dependencies]
+dioxus = { version = "0.6", features = ["router"] }
+dioxus-markdown = "0.0"
+include_dir = { version = "0.7", features = ["glob"] }
+
+[features]
+default = ["web"]
+web = ["dioxus/web"]
+desktop = ["dioxus/desktop"]
+mobile = ["dioxus/mobile"]
+
+[profile]
+
+[profile.wasm-dev]
+inherits = "dev"
+opt-level = 1
+
+[profile.server-dev]
+inherits = "dev"
+
+[profile.android-dev]
+inherits = "dev"
